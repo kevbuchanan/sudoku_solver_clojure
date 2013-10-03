@@ -61,5 +61,9 @@
           :else (solve new-board))))
 
 
-(println (solve "096040001100060004504810390007950043030080000405023018010630059059070830003590007"))
-(println (solve "302609005500730000000000900000940000000000109000057060008500006000000003019082040"))
+
+(use 'clojure.java.io)
+(with-open [rdr (reader "puzzles.txt")]
+  (doseq [line (line-seq rdr)]
+    (println (solve line))))
+
